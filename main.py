@@ -10,8 +10,10 @@ import sys
 import platform
 from PySide2 import QtCore, QtGui, QtWidgets
 from PySide2.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
-from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
+from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient, QIntValidator)
 from PySide2.QtWidgets import *
+from datetime import datetime, timedelta
+import pytimeparse
 
 # GUI FILE
 from ui_main import Ui_MainWindow
@@ -34,27 +36,27 @@ class MainWindow(QMainWindow):
         ########################################################################
 
         ## SET ==> WINDOW TITLE
-        self.setWindowTitle('Main Window - Python Base')
-        Functions.labelTitle(self, 'Main Window - Python Base')
-        Functions.labelDescription(self, 'Set text')
+        self.setWindowTitle('RENDER TIME CALCULATOR')
+        UIFunctions.labelTitle(self, 'RENDER TIME CALCULATOR')
+        UIFunctions.labelDescription(self, 'Calculate a rendering time estimate')
         ## ==> END ##
 
         ## REMOVE ==> STANDARD TITLE BAR
-        Functions.removeTitleBar(True)
+        UIFunctions.removeTitleBar(True)
         ## ==> END ##
 
         ## REMOVE ==> STANDARD TITLE BAR
         self.resize(500, 750)
         self.setMinimumSize(QSize(500, 750))
-        Functions.enableMaximumSize(self, 500, 750)
+        UIFunctions.enableMaximumSize(self, 500, 750)
         ## ==> END ##
 
         ## ==> MOVE WINDOW / MAXIMIZE / RESTORE
         ########################################################################
         def moveWindow(event):
             # IF MAXIMIZED CHANGE TO NORMAL
-            if Functions.returStatus() == 1:
-                Functions.maximize_restore(self)
+            if UIFunctions.returStatus() == 1:
+                UIFunctions.maximize_restore(self)
 
             # MOVE WINDOW
             if event.buttons() == Qt.LeftButton:
@@ -65,16 +67,16 @@ class MainWindow(QMainWindow):
         def dobleClickMaximizeRestore(event):
             # IF DOUBLE CLICK CHANGE STATUS
             if event.type() == QtCore.QEvent.MouseButtonDblClick:
-                QtCore.QTimer.singleShot(250, lambda: Functions.maximize_restore(self))
+                QtCore.QTimer.singleShot(250, lambda: UIFunctions.maximize_restore(self))
 
         # WIDGET TO MOVE
         self.ui.frame_label_top_btns.mouseMoveEvent = moveWindow
-        self.ui.frame_label_top_btns.mouseDoubleClickEvent = dobleClickMaximizeRestore
+        #self.ui.frame_label_top_btns.mouseDoubleClickEvent = dobleClickMaximizeRestore
         ## ==> END ##
 
         ## ==> LOAD DEFINITIONS
         ########################################################################
-        Functions.uiDefinitions(self)
+        UIFunctions.uiDefinitions(self)
         ## ==> END ##
 
         ########################################################################
@@ -93,30 +95,60 @@ class MainWindow(QMainWindow):
         ########################################################################
 
         ## ==> TOGGLE MENU SIZE
-        self.ui.btn_toggle_menu.clicked.connect(lambda: Functions.toggleMenu(self, 250, True))
+        self.ui.btn_toggle_menu.clicked.connect(lambda: UIFunctions.toggleMenu(self, 250, True))
         ## ==> END ##
 
         ## ==> ADD CUSTOM MENUS
         self.ui.stackedWidget.setMinimumWidth(400)
-        Functions.addNewMenu(self, "Home Page", "btn_home", "url(:/16x16/icons/16x16/cil-home.png)", True)
-        Functions.addNewMenu(self, "Add User", "btn_new_user", "url(:/16x16/icons/16x16/cil-user-follow.png)", True)
-        Functions.addNewMenu(self, "Custom Widgets", "btn_settings", "url(:/16x16/icons/16x16/cil-equalizer.png)", False)
+        UIFunctions.addNewMenu(self, "Render Time Calculator", "btn_home", "url(:/16x16/icons/16x16/cil-av-timer.png)", True)
+        UIFunctions.addNewMenu(self, "About", "btn_settings", "url(:/16x16/icons/16x16/cil-options.png)", False)
 
         # START MENU => SELECTION
-        Functions.selectStandardMenu(self, "btn_home")
+        UIFunctions.selectStandardMenu(self, "btn_home")
 
-        #Functions.selectMenu(getButton.objectName().styleSheet())
+        #UIFunctions.selectMenu(getButton.objectName().styleSheet())
         ## ==> END ##
 
         ## ==> START PAGE
         ########################################################################
         self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
+        self.ui.label_user_icon.hide()
         ## ==> END ##
 
         ## ==> QTableWidget RARAMETERS
         ########################################################################
-        self.ui.tableWidget.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+        self.ui.tableWidget_renders.hide()
+        self.ui.frame_div_table_widget.setMaximumSize(400, 50)
+        self.ui.tableWidget_renders.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
+        self.ui.tableWidget_renders.horizontalHeader().setSectionResizeMode(1, QtWidgets.QHeaderView.Fixed)
+        self.ui.tableWidget_renders.horizontalHeader().setSectionResizeMode(2, QtWidgets.QHeaderView.Fixed)
+        self.ui.tableWidget_renders.setColumnWidth(0, QtWidgets.QHeaderView.Stretch)
+        self.ui.tableWidget_renders.setColumnWidth(1, 120)
+        self.ui.tableWidget_renders.setColumnWidth(2, 50)
+        delegate = AlignDelegate(self.ui.tableWidget_renders)
+        self.ui.tableWidget_renders.setItemDelegateForColumn(1, delegate)
+        self.ui.tableWidget_renders.setItemDelegateForColumn(2, delegate)
         ## ==> END ##
+
+        ## ==> ADD NEW ROW
+        self.ui.pushButton_add_render.clicked.connect(lambda: Functions.addTableRow(self))
+
+
+        ## ==> JUST NUMBERS
+        self.onlyInt = QIntValidator()
+        # FIELDS
+        self.ui.lineEdit_hours.setValidator(self.onlyInt)
+        self.ui.lineEdit_minutes.setValidator(self.onlyInt)
+        self.ui.lineEdit_seconds.setValidator(self.onlyInt)
+        self.ui.lineEdit_frames.setValidator(self.onlyInt)
+        self.ui.lineEdit_machines.setValidator(self.onlyInt)
+
+        ## ==> AUTO UPDATE
+        Functions.calculateTime(self)
+        self.timer = QtCore.QTimer(self)
+        self.timer.start(1000)
+        self.timer.timeout.connect(lambda: Functions.calculateTime(self))
+
 
         ########################################################################
         #                                                                      #
@@ -129,6 +161,23 @@ class MainWindow(QMainWindow):
         self.show()
         ## ==> END ##
 
+
+    ########################################################################
+    ## TABLE WIDGET ==> FUNCTIONS
+    ########################################################################
+    def deleteClicked(self):
+        button = self.sender()
+        table = self.ui.tableWidget_renders
+        count = table.rowCount()
+
+        if button:
+            row = self.ui.tableWidget_renders.indexAt(button.pos()).row()
+            self.ui.tableWidget_renders.removeRow(row)
+
+        if count == 1:
+            Functions.toggleTable(self)
+            QtCore.QTimer.singleShot(600, lambda: self.ui.tableWidget_renders.hide())
+
     ########################################################################
     ## MENUS ==> DYNAMIC MENUS FUNCTIONS
     ########################################################################
@@ -139,21 +188,15 @@ class MainWindow(QMainWindow):
 
         if btnWidget.objectName() == "btn_home":
             self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-            Functions.resetStyle(self, "btn_home")
-            Functions.labelPage(self, "Home")
-            btnWidget.setStyleSheet(Functions.selectMenu(btnWidget.styleSheet()))
-
-        if btnWidget.objectName() == "btn_new_user":
-            self.ui.stackedWidget.setCurrentWidget(self.ui.page_home)
-            Functions.resetStyle(self, "btn_new_user")
-            Functions.labelPage(self, "New User")
-            btnWidget.setStyleSheet(Functions.selectMenu(btnWidget.styleSheet()))
+            UIFunctions.resetStyle(self, "btn_home")
+            UIFunctions.labelPage(self, "Home")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
         if btnWidget.objectName() == "btn_settings":
-            self.ui.stackedWidget.setCurrentWidget(self.ui.page_widgets)
-            Functions.resetStyle(self, "btn_settings")
-            Functions.labelPage(self, "Custom Widgets")
-            btnWidget.setStyleSheet(Functions.selectMenu(btnWidget.styleSheet()))
+            self.ui.stackedWidget.setCurrentWidget(self.ui.page_info)
+            UIFunctions.resetStyle(self, "btn_settings")
+            UIFunctions.labelPage(self, "About")
+            btnWidget.setStyleSheet(UIFunctions.selectMenu(btnWidget.styleSheet()))
 
     ## ==> END ##
 
@@ -163,10 +206,18 @@ class MainWindow(QMainWindow):
 
     ## EVENT ==> MOUSE DOUBLE CLICK
     ########################################################################
-    def eventFilter(self, watched, event):
-        if watched == self.le and event.type() == QtCore.QEvent.MouseButtonDblClick:
-            print("pos: ", event.pos())
+    def eventFilter(self, obj, event):
+        if isinstance(obj, QLineEdit) and event.type() == QEvent.keyPressEvent:
+            i = obj.property("index")
+            self.keyPressEvent.emit(i)
+        return QWidget.eventFilter(self, obj, event)
     ## ==> END ##
+
+    ## ==> keyReleaseEvent
+    ########################################################################
+    def keyReleaseEvent(self, event):
+        pass
+        #Functions.calculateTime(self)
 
     ## EVENT ==> MOUSE CLICK
     ########################################################################

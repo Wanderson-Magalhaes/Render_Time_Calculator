@@ -1494,10 +1494,11 @@ QPushButton:pressed {
 	border: 5px solid rgb(39, 44, 54);
 	background-position: center;
 	background-repeat: no-repeat;
+	background-image: url(:/32x32/icons/32x32/timer-icon.png);
 }</string>
                   </property>
                   <property name="text">
-                   <string>WM</string>
+                   <string/>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -1563,6 +1564,12 @@ QPushButton:pressed {
                 </property>
                 <item>
                  <widget class="QStackedWidget" name="stackedWidget">
+                  <property name="maximumSize">
+                   <size>
+                    <width>400</width>
+                    <height>16777215</height>
+                   </size>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">background: transparent;</string>
                   </property>
@@ -1670,7 +1677,7 @@ border-radius: 10px;
                               <property name="minimumSize">
                                <size>
                                 <width>100</width>
-                                <height>70</height>
+                                <height>60</height>
                                </size>
                               </property>
                               <property name="font">
@@ -1694,6 +1701,9 @@ QLineEdit:focus {
 	border: 2px solid rgb(85, 170, 255);
 	background-color: rgb(43, 49, 57);
 }</string>
+                              </property>
+                              <property name="text">
+                               <string/>
                               </property>
                               <property name="maxLength">
                                <number>2</number>
@@ -1711,7 +1721,7 @@ QLineEdit:focus {
                               <property name="minimumSize">
                                <size>
                                 <width>100</width>
-                                <height>70</height>
+                                <height>60</height>
                                </size>
                               </property>
                               <property name="font">
@@ -1735,6 +1745,9 @@ QLineEdit:focus {
 	border: 2px solid rgb(85, 170, 255);
 	background-color: rgb(43, 49, 57);
 }</string>
+                              </property>
+                              <property name="text">
+                               <string/>
                               </property>
                               <property name="maxLength">
                                <number>2</number>
@@ -1752,7 +1765,7 @@ QLineEdit:focus {
                               <property name="minimumSize">
                                <size>
                                 <width>100</width>
-                                <height>70</height>
+                                <height>60</height>
                                </size>
                               </property>
                               <property name="font">
@@ -1776,6 +1789,9 @@ QLineEdit:focus {
 	border: 2px solid rgb(85, 170, 255);
 	background-color: rgb(43, 49, 57);
 }</string>
+                              </property>
+                              <property name="text">
+                               <string/>
                               </property>
                               <property name="maxLength">
                                <number>2</number>
@@ -1971,39 +1987,12 @@ border-radius: 10px;
                          <layout class="QVBoxLayout" name="verticalLayout_17">
                           <item>
                            <layout class="QGridLayout" name="gridLayout_4">
-                            <item row="1" column="1">
-                             <widget class="QLabel" name="label_machines">
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Segoe UI</family>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="lineWidth">
-                               <number>1</number>
-                              </property>
-                              <property name="text">
-                               <string>MACHINES</string>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
-                              </property>
-                             </widget>
-                            </item>
                             <item row="0" column="1">
                              <widget class="QLineEdit" name="lineEdit_machines">
                               <property name="minimumSize">
                                <size>
                                 <width>100</width>
-                                <height>70</height>
+                                <height>60</height>
                                </size>
                               </property>
                               <property name="font">
@@ -2028,6 +2017,9 @@ QLineEdit:focus {
 	background-color: rgb(43, 49, 57);
 }</string>
                               </property>
+                              <property name="text">
+                               <string>1</string>
+                              </property>
                               <property name="maxLength">
                                <number>4</number>
                               </property>
@@ -2035,7 +2027,78 @@ QLineEdit:focus {
                                <set>Qt::AlignCenter</set>
                               </property>
                               <property name="placeholderText">
+                               <string>1</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="0" column="0">
+                             <widget class="QLineEdit" name="lineEdit_frames">
+                              <property name="minimumSize">
+                               <size>
+                                <width>100</width>
+                                <height>60</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Roboto Thin</family>
+                                <pointsize>40</pointsize>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true">QLineEdit {
+	background-color: rgb(41, 46, 57);
+	border-radius: 10px;
+	border: 2px solid rgb(41, 45, 56);
+	padding: 0px;
+	selection-background-color: rgb(85, 170, 255);
+}
+QLineEdit:hover {
+	border: 2px solid rgb(64, 71, 88);
+}
+QLineEdit:focus {
+	border: 2px solid rgb(85, 170, 255);
+	background-color: rgb(43, 49, 57);
+}</string>
+                              </property>
+                              <property name="text">
+                               <string/>
+                              </property>
+                              <property name="maxLength">
+                               <number>8</number>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignCenter</set>
+                              </property>
+                              <property name="placeholderText">
                                <string>00</string>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="1" column="1">
+                             <widget class="QLabel" name="label_machines">
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Segoe UI</family>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                              <property name="lineWidth">
+                               <number>1</number>
+                              </property>
+                              <property name="text">
+                               <string>MACHINES</string>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignCenter</set>
                               </property>
                              </widget>
                             </item>
@@ -2066,92 +2129,6 @@ QLineEdit:focus {
                               </property>
                              </widget>
                             </item>
-                            <item row="0" column="0">
-                             <widget class="QLineEdit" name="lineEdit_frames">
-                              <property name="minimumSize">
-                               <size>
-                                <width>100</width>
-                                <height>70</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Roboto Thin</family>
-                                <pointsize>40</pointsize>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QLineEdit {
-	background-color: rgb(41, 46, 57);
-	border-radius: 10px;
-	border: 2px solid rgb(41, 45, 56);
-	padding: 0px;
-	selection-background-color: rgb(85, 170, 255);
-}
-QLineEdit:hover {
-	border: 2px solid rgb(64, 71, 88);
-}
-QLineEdit:focus {
-	border: 2px solid rgb(85, 170, 255);
-	background-color: rgb(43, 49, 57);
-}</string>
-                              </property>
-                              <property name="maxLength">
-                               <number>8</number>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
-                              </property>
-                              <property name="placeholderText">
-                               <string>00</string>
-                              </property>
-                             </widget>
-                            </item>
-                            <item row="0" column="2" rowspan="2">
-                             <widget class="QPushButton" name="pushButton_add">
-                              <property name="sizePolicy">
-                               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-                                <horstretch>0</horstretch>
-                                <verstretch>0</verstretch>
-                               </sizepolicy>
-                              </property>
-                              <property name="minimumSize">
-                               <size>
-                                <width>80</width>
-                                <height>0</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Roboto Medium</family>
-                                <pointsize>9</pointsize>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true">QPushButton {
-	border: 2px solid rgb(52, 59, 72);
-	border-radius: 10px;	
-	background-color: rgb(52, 59, 72);
-	padding-right: 5px;
-}
-QPushButton:hover {
-	background-color: rgb(57, 65, 80);
-	border: 2px solid rgb(61, 70, 86);
-}
-QPushButton:pressed {	
-	background-color: rgb(35, 40, 49);
-	border: 2px solid rgb(43, 50, 61);
-}</string>
-                              </property>
-                              <property name="text">
-                               <string>ADD</string>
-                              </property>
-                              <property name="icon">
-                               <iconset resource="files.qrc">
-                                <normaloff>:/16x16/icons/16x16/cil-plus.png</normaloff>:/16x16/icons/16x16/cil-plus.png</iconset>
-                              </property>
-                             </widget>
-                            </item>
                            </layout>
                           </item>
                          </layout>
@@ -2165,7 +2142,7 @@ QPushButton:pressed {
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
-                        <height>120</height>
+                        <height>40</height>
                        </size>
                       </property>
                       <property name="styleSheet">
@@ -2182,35 +2159,8 @@ border-radius: 10px;
                       <layout class="QVBoxLayout" name="verticalLayout_20">
                        <item>
                         <layout class="QGridLayout" name="gridLayout_6">
-                         <item row="0" column="0">
-                          <widget class="QLineEdit" name="lineEdit_2">
-                           <property name="minimumSize">
-                            <size>
-                             <width>0</width>
-                             <height>30</height>
-                            </size>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QLineEdit {
-	background-color: rgb(27, 29, 35);
-	border-radius: 10px;
-	border: 2px solid rgb(27, 29, 35);
-	padding-left: 10px;
-}
-QLineEdit:hover {
-	border: 2px solid rgb(64, 71, 88);
-}
-QLineEdit:focus {
-	border: 2px solid rgb(91, 101, 124);
-}</string>
-                           </property>
-                           <property name="placeholderText">
-                            <string>Description</string>
-                           </property>
-                          </widget>
-                         </item>
                          <item row="0" column="1">
-                          <widget class="QPushButton" name="pushButton_2">
+                          <widget class="QPushButton" name="pushButton_add_render">
                            <property name="minimumSize">
                             <size>
                              <width>120</width>
@@ -2248,13 +2198,55 @@ QPushButton:pressed {
                            </property>
                           </widget>
                          </item>
+                         <item row="0" column="0">
+                          <widget class="QLineEdit" name="lineEdit_description">
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>30</height>
+                            </size>
+                           </property>
+                           <property name="styleSheet">
+                            <string notr="true">QLineEdit {
+	background-color: rgb(27, 29, 35);
+	border-radius: 10px;
+	border: 2px solid rgb(27, 29, 35);
+	padding-left: 10px;
+}
+QLineEdit:hover {
+	border: 2px solid rgb(64, 71, 88);
+}
+QLineEdit:focus {
+	border: 2px solid rgb(91, 101, 124);
+}</string>
+                           </property>
+                           <property name="maxLength">
+                            <number>32</number>
+                           </property>
+                           <property name="placeholderText">
+                            <string>Description</string>
+                           </property>
+                          </widget>
+                         </item>
                          <item row="1" column="0" colspan="2">
-                          <widget class="QTableWidget" name="tableWidget_2">
+                          <widget class="QTableWidget" name="tableWidget_renders">
                            <property name="sizePolicy">
                             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                              <horstretch>0</horstretch>
                              <verstretch>0</verstretch>
                             </sizepolicy>
+                           </property>
+                           <property name="minimumSize">
+                            <size>
+                             <width>0</width>
+                             <height>100</height>
+                            </size>
+                           </property>
+                           <property name="maximumSize">
+                            <size>
+                             <width>16777215</width>
+                             <height>100</height>
+                            </size>
                            </property>
                            <property name="palette">
                             <palette>
@@ -2458,7 +2450,6 @@ QPushButton:pressed {
                            <property name="styleSheet">
                             <string notr="true">QTableWidget {	
 	background-color: transparent;
-	padding: 5px;
 	border-radius: 5px;
 	gridline-color: rgb(44, 49, 60);
 	border-bottom: 1px solid rgb(44, 49, 60);
@@ -2470,7 +2461,8 @@ QTableWidget::item{
 	gridline-color: rgb(44, 49, 60);
 }
 QTableWidget::item:selected{
-	background-color: rgb(85, 170, 255);
+	background-color: rgb(52, 59, 72);	
+	color: rgb(210, 210, 210);
 }
 QScrollBar:horizontal {
     border: none;
@@ -2515,7 +2507,7 @@ QHeaderView::section:vertical
                             <enum>QFrame::NoFrame</enum>
                            </property>
                            <property name="verticalScrollBarPolicy">
-                            <enum>Qt::ScrollBarAlwaysOn</enum>
+                            <enum>Qt::ScrollBarAsNeeded</enum>
                            </property>
                            <property name="horizontalScrollBarPolicy">
                             <enum>Qt::ScrollBarAlwaysOff</enum>
@@ -2523,11 +2515,11 @@ QHeaderView::section:vertical
                            <property name="sizeAdjustPolicy">
                             <enum>QAbstractScrollArea::AdjustToContents</enum>
                            </property>
+                           <property name="autoScroll">
+                            <bool>false</bool>
+                           </property>
                            <property name="editTriggers">
                             <set>QAbstractItemView::NoEditTriggers</set>
-                           </property>
-                           <property name="alternatingRowColors">
-                            <bool>false</bool>
                            </property>
                            <property name="selectionMode">
                             <enum>QAbstractItemView::SingleSelection</enum>
@@ -2547,80 +2539,30 @@ QHeaderView::section:vertical
                            <attribute name="horizontalHeaderVisible">
                             <bool>true</bool>
                            </attribute>
-                           <attribute name="horizontalHeaderCascadingSectionResizes">
-                            <bool>true</bool>
-                           </attribute>
-                           <attribute name="horizontalHeaderMinimumSectionSize">
-                            <number>20</number>
-                           </attribute>
-                           <attribute name="horizontalHeaderDefaultSectionSize">
-                            <number>50</number>
-                           </attribute>
-                           <attribute name="horizontalHeaderStretchLastSection">
-                            <bool>true</bool>
-                           </attribute>
                            <attribute name="verticalHeaderVisible">
                             <bool>false</bool>
                            </attribute>
-                           <attribute name="verticalHeaderCascadingSectionResizes">
-                            <bool>false</bool>
-                           </attribute>
-                           <attribute name="verticalHeaderMinimumSectionSize">
-                            <number>18</number>
-                           </attribute>
-                           <attribute name="verticalHeaderDefaultSectionSize">
-                            <number>18</number>
-                           </attribute>
-                           <attribute name="verticalHeaderHighlightSections">
-                            <bool>false</bool>
-                           </attribute>
-                           <attribute name="verticalHeaderStretchLastSection">
-                            <bool>true</bool>
-                           </attribute>
-                           <row>
-                            <property name="text">
-                             <string>1</string>
-                            </property>
-                           </row>
                            <column>
                             <property name="text">
-                             <string>Name</string>
+                             <string>DESCRIPTION</string>
                             </property>
                            </column>
                            <column>
                             <property name="text">
-                             <string>Time</string>
-                            </property>
-                           </column>
-                           <column>
-                            <property name="text">
-                             <string>Del</string>
-                            </property>
-                           </column>
-                           <item row="0" column="0">
-                            <property name="text">
-                             <string>Render 1</string>
-                            </property>
-                           </item>
-                           <item row="0" column="1">
-                            <property name="text">
-                             <string>04:04:05</string>
+                             <string>TIME</string>
                             </property>
                             <property name="textAlignment">
                              <set>AlignCenter</set>
                             </property>
-                           </item>
-                           <item row="0" column="2">
+                           </column>
+                           <column>
                             <property name="text">
-                             <string>X</string>
+                             <string notr="true">DEL</string>
                             </property>
                             <property name="textAlignment">
                              <set>AlignCenter</set>
                             </property>
-                            <property name="flags">
-                             <set>ItemIsSelectable|ItemIsEnabled</set>
-                            </property>
-                           </item>
+                           </column>
                           </widget>
                          </item>
                         </layout>
@@ -2651,7 +2593,7 @@ border-radius: 10px;
                        <item>
                         <layout class="QGridLayout" name="gridLayout_5">
                          <item row="0" column="0" colspan="2">
-                          <widget class="QLabel" name="labelBoxBlenderInstalation_4">
+                          <widget class="QLabel" name="label_render_time">
                            <property name="font">
                             <font>
                              <family>Roboto Thin</family>
@@ -2699,7 +2641,7 @@ border-radius: 10px;
                           </widget>
                          </item>
                          <item row="2" column="0">
-                          <widget class="QLabel" name="labelBoxBlenderInstalation_5">
+                          <widget class="QLabel" name="label_current_time">
                            <property name="font">
                             <font>
                              <family>Roboto Thin</family>
@@ -2720,7 +2662,7 @@ border-radius: 10px;
                           </widget>
                          </item>
                          <item row="2" column="1">
-                          <widget class="QLabel" name="labelBoxBlenderInstalation_6">
+                          <widget class="QLabel" name="label_finish_time">
                            <property name="font">
                             <font>
                              <family>Roboto Thin</family>
@@ -2795,18 +2737,19 @@ border-radius: 10px;
                           </widget>
                          </item>
                          <item row="4" column="0" colspan="2">
-                          <widget class="QLabel" name="label_machines_4">
+                          <widget class="QLabel" name="label_day_end">
                            <property name="font">
                             <font>
                              <family>Segoe UI</family>
                             </font>
                            </property>
                            <property name="styleSheet">
-                            <string notr="true">background-color: rgb(37, 39, 44);
+                            <string notr="true">background-color: rgb(33, 37, 43);
 border-radius: 10px;
 padding: 5px;
 padding-bottom: 7px;
-margin-top: 8px;</string>
+margin-top: 8px;
+color: rgb(255, 0, 127);</string>
                            </property>
                            <property name="lineWidth">
                             <number>1</number>
@@ -2943,96 +2886,7 @@ border-radius: 5px;
                             <property name="frameShadow">
                              <enum>QFrame::Raised</enum>
                             </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_9">
-                             <item>
-                              <layout class="QGridLayout" name="gridLayout">
-                               <property name="bottomMargin">
-                                <number>0</number>
-                               </property>
-                               <item row="0" column="0">
-                                <widget class="QLineEdit" name="lineEdit">
-                                 <property name="minimumSize">
-                                  <size>
-                                   <width>0</width>
-                                   <height>30</height>
-                                  </size>
-                                 </property>
-                                 <property name="styleSheet">
-                                  <string notr="true">QLineEdit {
-	background-color: rgb(27, 29, 35);
-	border-radius: 5px;
-	border: 2px solid rgb(27, 29, 35);
-	padding-left: 10px;
-}
-QLineEdit:hover {
-	border: 2px solid rgb(64, 71, 88);
-}
-QLineEdit:focus {
-	border: 2px solid rgb(91, 101, 124);
-}</string>
-                                 </property>
-                                 <property name="placeholderText">
-                                  <string>Your Password</string>
-                                 </property>
-                                </widget>
-                               </item>
-                               <item row="0" column="1">
-                                <widget class="QPushButton" name="pushButton">
-                                 <property name="minimumSize">
-                                  <size>
-                                   <width>150</width>
-                                   <height>30</height>
-                                  </size>
-                                 </property>
-                                 <property name="font">
-                                  <font>
-                                   <family>Segoe UI</family>
-                                   <pointsize>9</pointsize>
-                                  </font>
-                                 </property>
-                                 <property name="styleSheet">
-                                  <string notr="true">QPushButton {
-	border: 2px solid rgb(52, 59, 72);
-	border-radius: 5px;	
-	background-color: rgb(52, 59, 72);
-}
-QPushButton:hover {
-	background-color: rgb(57, 65, 80);
-	border: 2px solid rgb(61, 70, 86);
-}
-QPushButton:pressed {	
-	background-color: rgb(35, 40, 49);
-	border: 2px solid rgb(43, 50, 61);
-}</string>
-                                 </property>
-                                 <property name="text">
-                                  <string>Open Blender</string>
-                                 </property>
-                                 <property name="icon">
-                                  <iconset resource="files.qrc">
-                                   <normaloff>:/16x16/icons/16x16/cil-folder-open.png</normaloff>:/16x16/icons/16x16/cil-folder-open.png</iconset>
-                                 </property>
-                                </widget>
-                               </item>
-                               <item row="1" column="0" colspan="2">
-                                <widget class="QLabel" name="labelVersion_3">
-                                 <property name="styleSheet">
-                                  <string notr="true">color: rgb(98, 103, 111);</string>
-                                 </property>
-                                 <property name="lineWidth">
-                                  <number>1</number>
-                                 </property>
-                                 <property name="text">
-                                  <string>Ex: C:Program FilesBlender FoundationBlender 2.82 blender.exe</string>
-                                 </property>
-                                 <property name="alignment">
-                                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                                 </property>
-                                </widget>
-                               </item>
-                              </layout>
-                             </item>
-                            </layout>
+                            <layout class="QHBoxLayout" name="horizontalLayout_9"/>
                            </widget>
                           </item>
                          </layout>
@@ -3059,212 +2913,17 @@ border-radius: 5px;</string>
                       <property name="frameShadow">
                        <enum>QFrame::Raised</enum>
                       </property>
-                      <layout class="QVBoxLayout" name="verticalLayout_11">
-                       <item>
-                        <layout class="QGridLayout" name="gridLayout_2">
-                         <item row="0" column="0">
-                          <widget class="QCheckBox" name="checkBox">
-                           <property name="autoFillBackground">
-                            <bool>false</bool>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true"/>
-                           </property>
-                           <property name="text">
-                            <string>CheckBox</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="1">
-                          <widget class="QRadioButton" name="radioButton">
-                           <property name="styleSheet">
-                            <string notr="true"/>
-                           </property>
-                           <property name="text">
-                            <string>RadioButton</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="2" rowspan="3">
-                          <widget class="QSlider" name="verticalSlider">
-                           <property name="styleSheet">
-                            <string notr="true"/>
-                           </property>
-                           <property name="orientation">
-                            <enum>Qt::Vertical</enum>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="4" rowspan="3">
-                          <widget class="QScrollBar" name="verticalScrollBar">
-                           <property name="styleSheet">
-                            <string notr="true"> QScrollBar:vertical {
-	border: none;
-    background: rgb(52, 59, 72);
-    width: 14px;
-    margin: 21px 0 21px 0;
-	border-radius: 0px;
- }</string>
-                           </property>
-                           <property name="orientation">
-                            <enum>Qt::Vertical</enum>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="0" column="5" rowspan="3">
-                          <widget class="QScrollArea" name="scrollArea">
-                           <property name="styleSheet">
-                            <string notr="true">QScrollArea {
-	border: none;
-	border-radius: 0px;
-}
-QScrollBar:horizontal {
-    border: none;
-    background: rgb(52, 59, 72);
-    height: 14px;
-    margin: 0px 21px 0 21px;
-	border-radius: 0px;
-}
- QScrollBar:vertical {
-	border: none;
-    background: rgb(52, 59, 72);
-    width: 14px;
-    margin: 21px 0 21px 0;
-	border-radius: 0px;
- }
-</string>
-                           </property>
-                           <property name="frameShape">
-                            <enum>QFrame::NoFrame</enum>
-                           </property>
-                           <property name="verticalScrollBarPolicy">
-                            <enum>Qt::ScrollBarAlwaysOn</enum>
-                           </property>
-                           <property name="horizontalScrollBarPolicy">
-                            <enum>Qt::ScrollBarAsNeeded</enum>
-                           </property>
-                           <property name="widgetResizable">
-                            <bool>true</bool>
-                           </property>
-                           <widget class="QWidget" name="scrollAreaWidgetContents">
-                            <property name="geometry">
-                             <rect>
-                              <x>0</x>
-                              <y>0</y>
-                              <width>218</width>
-                              <height>218</height>
-                             </rect>
-                            </property>
-                            <layout class="QHBoxLayout" name="horizontalLayout_11">
-                             <item>
-                              <widget class="QPlainTextEdit" name="plainTextEdit">
-                               <property name="minimumSize">
-                                <size>
-                                 <width>200</width>
-                                 <height>200</height>
-                                </size>
-                               </property>
-                               <property name="styleSheet">
-                                <string notr="true">QPlainTextEdit {
-	background-color: rgb(27, 29, 35);
-	border-radius: 5px;
-	padding: 10px;
-}
-QPlainTextEdit:hover {
-	border: 2px solid rgb(64, 71, 88);
-}
-QPlainTextEdit:focus {
-	border: 2px solid rgb(91, 101, 124);
-}</string>
-                               </property>
-                              </widget>
-                             </item>
-                            </layout>
-                           </widget>
-                          </widget>
-                         </item>
-                         <item row="1" column="0" colspan="2">
-                          <widget class="QComboBox" name="comboBox">
-                           <property name="font">
-                            <font>
-                             <family>Segoe UI</family>
-                             <pointsize>9</pointsize>
-                            </font>
-                           </property>
-                           <property name="autoFillBackground">
-                            <bool>false</bool>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QComboBox{
-	background-color: rgb(27, 29, 35);
-	border-radius: 5px;
-	border: 2px solid rgb(27, 29, 35);
-	padding: 5px;
-	padding-left: 10px;
-}
-QComboBox:hover{
-	border: 2px solid rgb(64, 71, 88);
-}
-QComboBox QAbstractItemView {
-	color: rgb(85, 170, 255);	
-	background-color: rgb(27, 29, 35);
-	padding: 10px;
-	selection-background-color: rgb(39, 44, 54);
-}</string>
-                           </property>
-                           <property name="iconSize">
-                            <size>
-                             <width>16</width>
-                             <height>16</height>
-                            </size>
-                           </property>
-                           <property name="frame">
-                            <bool>true</bool>
-                           </property>
-                           <item>
-                            <property name="text">
-                             <string>Test 1</string>
-                            </property>
-                           </item>
-                           <item>
-                            <property name="text">
-                             <string>Test 2</string>
-                            </property>
-                           </item>
-                           <item>
-                            <property name="text">
-                             <string>Test 3</string>
-                            </property>
-                           </item>
-                          </widget>
-                         </item>
-                         <item row="1" column="3">
-                          <widget class="QScrollBar" name="horizontalScrollBar">
-                           <property name="sizePolicy">
-                            <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                             <horstretch>0</horstretch>
-                             <verstretch>0</verstretch>
-                            </sizepolicy>
-                           </property>
-                           <property name="styleSheet">
-                            <string notr="true">QScrollBar:horizontal {
-    border: none;
-    background: rgb(52, 59, 72);
-    height: 14px;
-    margin: 0px 21px 0 21px;
-	border-radius: 0px;
-}
-</string>
-                           </property>
-                           <property name="orientation">
-                            <enum>Qt::Horizontal</enum>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="1" column="6">
-                          <widget class="QCommandLinkButton" name="commandLinkButton">
-                           <property name="styleSheet">
-                            <string notr="true">QCommandLinkButton {	
+                      <widget class="QCommandLinkButton" name="commandLinkButton">
+                       <property name="geometry">
+                        <rect>
+                         <x>40</x>
+                         <y>80</y>
+                         <width>271</width>
+                         <height>51</height>
+                        </rect>
+                       </property>
+                       <property name="styleSheet">
+                        <string notr="true">QCommandLinkButton {	
 	color: rgb(85, 170, 255);
 	border-radius: 5px;
 	padding: 5px;
@@ -3277,509 +2936,18 @@ QCommandLinkButton:pressed {
 	color: rgb(210, 210, 210);
 	background-color: rgb(52, 58, 71);
 }</string>
-                           </property>
-                           <property name="text">
-                            <string>CommandLinkButton</string>
-                           </property>
-                           <property name="icon">
-                            <iconset resource="files.qrc">
-                             <normaloff>:/16x16/icons/16x16/cil-link.png</normaloff>:/16x16/icons/16x16/cil-link.png</iconset>
-                           </property>
-                           <property name="description">
-                            <string>Open External Link</string>
-                           </property>
-                          </widget>
-                         </item>
-                         <item row="2" column="0" colspan="2">
-                          <widget class="QSlider" name="horizontalSlider">
-                           <property name="styleSheet">
-                            <string notr="true"/>
-                           </property>
-                           <property name="orientation">
-                            <enum>Qt::Horizontal</enum>
-                           </property>
-                          </widget>
-                         </item>
-                        </layout>
-                       </item>
-                      </layout>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QFrame" name="frame_3">
-                      <property name="minimumSize">
-                       <size>
-                        <width>0</width>
-                        <height>150</height>
-                       </size>
-                      </property>
-                      <property name="frameShape">
-                       <enum>QFrame::StyledPanel</enum>
-                      </property>
-                      <property name="frameShadow">
-                       <enum>QFrame::Raised</enum>
-                      </property>
-                      <layout class="QHBoxLayout" name="horizontalLayout_12">
-                       <property name="spacing">
-                        <number>0</number>
                        </property>
-                       <property name="leftMargin">
-                        <number>0</number>
+                       <property name="text">
+                        <string>CommandLinkButton</string>
                        </property>
-                       <property name="topMargin">
-                        <number>0</number>
+                       <property name="icon">
+                        <iconset resource="files.qrc">
+                         <normaloff>:/16x16/icons/16x16/cil-link.png</normaloff>:/16x16/icons/16x16/cil-link.png</iconset>
                        </property>
-                       <property name="rightMargin">
-                        <number>0</number>
+                       <property name="description">
+                        <string>Open External Link</string>
                        </property>
-                       <property name="bottomMargin">
-                        <number>0</number>
-                       </property>
-                       <item>
-                        <widget class="QTableWidget" name="tableWidget">
-                         <property name="sizePolicy">
-                          <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="palette">
-                          <palette>
-                           <active>
-                            <colorrole role="WindowText">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Button">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>39</red>
-                               <green>44</green>
-                               <blue>54</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Text">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="ButtonText">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Base">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>39</red>
-                               <green>44</green>
-                               <blue>54</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Window">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>39</red>
-                               <green>44</green>
-                               <blue>54</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="PlaceholderText">
-                             <brush brushstyle="NoBrush">
-                              <color alpha="128">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                           </active>
-                           <inactive>
-                            <colorrole role="WindowText">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Button">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>39</red>
-                               <green>44</green>
-                               <blue>54</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Text">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="ButtonText">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Base">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>39</red>
-                               <green>44</green>
-                               <blue>54</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Window">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>39</red>
-                               <green>44</green>
-                               <blue>54</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="PlaceholderText">
-                             <brush brushstyle="NoBrush">
-                              <color alpha="128">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                           </inactive>
-                           <disabled>
-                            <colorrole role="WindowText">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Button">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>39</red>
-                               <green>44</green>
-                               <blue>54</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Text">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="ButtonText">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Base">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>39</red>
-                               <green>44</green>
-                               <blue>54</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="Window">
-                             <brush brushstyle="SolidPattern">
-                              <color alpha="255">
-                               <red>39</red>
-                               <green>44</green>
-                               <blue>54</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                            <colorrole role="PlaceholderText">
-                             <brush brushstyle="NoBrush">
-                              <color alpha="128">
-                               <red>210</red>
-                               <green>210</green>
-                               <blue>210</blue>
-                              </color>
-                             </brush>
-                            </colorrole>
-                           </disabled>
-                          </palette>
-                         </property>
-                         <property name="styleSheet">
-                          <string notr="true">QTableWidget {	
-	background-color: rgb(39, 44, 54);
-	padding: 10px;
-	border-radius: 5px;
-	gridline-color: rgb(44, 49, 60);
-	border-bottom: 1px solid rgb(44, 49, 60);
-}
-QTableWidget::item{
-	border-color: rgb(44, 49, 60);
-	padding-left: 5px;
-	padding-right: 5px;
-	gridline-color: rgb(44, 49, 60);
-}
-QTableWidget::item:selected{
-	background-color: rgb(85, 170, 255);
-}
-QScrollBar:horizontal {
-    border: none;
-    background: rgb(52, 59, 72);
-    height: 14px;
-    margin: 0px 21px 0 21px;
-	border-radius: 0px;
-}
- QScrollBar:vertical {
-	border: none;
-    background: rgb(52, 59, 72);
-    width: 14px;
-    margin: 21px 0 21px 0;
-	border-radius: 0px;
- }
-QHeaderView::section{
-	Background-color: rgb(39, 44, 54);
-	max-width: 30px;
-	border: 1px solid rgb(44, 49, 60);
-	border-style: none;
-    border-bottom: 1px solid rgb(44, 49, 60);
-    border-right: 1px solid rgb(44, 49, 60);
-}
-QTableWidget::horizontalHeader {	
-	background-color: rgb(81, 255, 0);
-}
-QHeaderView::section:horizontal
-{
-    border: 1px solid rgb(32, 34, 42);
-	background-color: rgb(27, 29, 35);
-	padding: 3px;
-	border-top-left-radius: 7px;
-    border-top-right-radius: 7px;
-}
-QHeaderView::section:vertical
-{
-    border: 1px solid rgb(44, 49, 60);
-}
-</string>
-                         </property>
-                         <property name="frameShape">
-                          <enum>QFrame::NoFrame</enum>
-                         </property>
-                         <property name="verticalScrollBarPolicy">
-                          <enum>Qt::ScrollBarAlwaysOn</enum>
-                         </property>
-                         <property name="sizeAdjustPolicy">
-                          <enum>QAbstractScrollArea::AdjustToContents</enum>
-                         </property>
-                         <property name="editTriggers">
-                          <set>QAbstractItemView::NoEditTriggers</set>
-                         </property>
-                         <property name="alternatingRowColors">
-                          <bool>false</bool>
-                         </property>
-                         <property name="selectionMode">
-                          <enum>QAbstractItemView::SingleSelection</enum>
-                         </property>
-                         <property name="selectionBehavior">
-                          <enum>QAbstractItemView::SelectRows</enum>
-                         </property>
-                         <property name="showGrid">
-                          <bool>true</bool>
-                         </property>
-                         <property name="gridStyle">
-                          <enum>Qt::SolidLine</enum>
-                         </property>
-                         <property name="sortingEnabled">
-                          <bool>false</bool>
-                         </property>
-                         <attribute name="horizontalHeaderVisible">
-                          <bool>false</bool>
-                         </attribute>
-                         <attribute name="horizontalHeaderCascadingSectionResizes">
-                          <bool>true</bool>
-                         </attribute>
-                         <attribute name="horizontalHeaderDefaultSectionSize">
-                          <number>200</number>
-                         </attribute>
-                         <attribute name="horizontalHeaderStretchLastSection">
-                          <bool>true</bool>
-                         </attribute>
-                         <attribute name="verticalHeaderVisible">
-                          <bool>false</bool>
-                         </attribute>
-                         <attribute name="verticalHeaderCascadingSectionResizes">
-                          <bool>false</bool>
-                         </attribute>
-                         <attribute name="verticalHeaderHighlightSections">
-                          <bool>false</bool>
-                         </attribute>
-                         <attribute name="verticalHeaderStretchLastSection">
-                          <bool>true</bool>
-                         </attribute>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                          <property name="font">
-                           <font>
-                            <family>Segoe UI</family>
-                           </font>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <row>
-                          <property name="text">
-                           <string>New Row</string>
-                          </property>
-                         </row>
-                         <column>
-                          <property name="text">
-                           <string>0</string>
-                          </property>
-                         </column>
-                         <column>
-                          <property name="text">
-                           <string>1</string>
-                          </property>
-                         </column>
-                         <column>
-                          <property name="text">
-                           <string>2</string>
-                          </property>
-                         </column>
-                         <column>
-                          <property name="text">
-                           <string>3</string>
-                          </property>
-                         </column>
-                         <item row="0" column="0">
-                          <property name="text">
-                           <string>Test</string>
-                          </property>
-                         </item>
-                         <item row="0" column="1">
-                          <property name="text">
-                           <string>Text</string>
-                          </property>
-                         </item>
-                         <item row="0" column="2">
-                          <property name="text">
-                           <string>Cell</string>
-                          </property>
-                         </item>
-                         <item row="0" column="3">
-                          <property name="text">
-                           <string>Line</string>
-                          </property>
-                         </item>
-                        </widget>
-                       </item>
-                      </layout>
+                      </widget>
                      </widget>
                     </item>
                    </layout>
@@ -3942,18 +3110,10 @@ QHeaderView::section:vertical
   <tabstop>lineEdit_seconds</tabstop>
   <tabstop>lineEdit_frames</tabstop>
   <tabstop>lineEdit_machines</tabstop>
-  <tabstop>pushButton_add</tabstop>
-  <tabstop>plainTextEdit</tabstop>
-  <tabstop>tableWidget</tabstop>
+  <tabstop>lineEdit_description</tabstop>
+  <tabstop>pushButton_add_render</tabstop>
+  <tabstop>tableWidget_renders</tabstop>
   <tabstop>commandLinkButton</tabstop>
-  <tabstop>lineEdit</tabstop>
-  <tabstop>pushButton</tabstop>
-  <tabstop>checkBox</tabstop>
-  <tabstop>radioButton</tabstop>
-  <tabstop>verticalSlider</tabstop>
-  <tabstop>scrollArea</tabstop>
-  <tabstop>horizontalSlider</tabstop>
-  <tabstop>comboBox</tabstop>
  </tabstops>
  <resources>
   <include location="files.qrc"/>

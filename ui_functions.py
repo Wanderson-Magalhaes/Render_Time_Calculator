@@ -8,12 +8,14 @@
 
 # GUI FILE
 from main import *
+from app_functions import *
 count = 1
-class Functions(MainWindow):
+class UIFunctions(MainWindow):
 
     ## ==> GLOBALS
     globals()['state'] = 0
     globals()['titleBar'] = True
+
 
     ########################################################################
     ## START - GUI FUNCTIONS
@@ -136,13 +138,13 @@ class Functions(MainWindow):
     def selectStandardMenu(self, widget):
         for w in self.ui.frame_left_menu.findChildren(QPushButton):
             if w.objectName() == widget:
-                w.setStyleSheet(Functions.selectMenu(w.styleSheet()))
+                w.setStyleSheet(UIFunctions.selectMenu(w.styleSheet()))
 
     ## ==> RESET SELECTION
     def resetStyle(self, widget):
         for w in self.ui.frame_left_menu.findChildren(QPushButton):
             if w.objectName() != widget:
-                w.setStyleSheet(Functions.deselectMenu(w.styleSheet()))
+                w.setStyleSheet(UIFunctions.deselectMenu(w.styleSheet()))
 
     ## ==> CHANGE PAGE LABEL TEXT
     def labelPage(self, text):
@@ -191,7 +193,7 @@ class Functions(MainWindow):
         self.ui.btn_minimize.clicked.connect(lambda: self.showMinimized())
 
         ## ==> MAXIMIZE/RESTORE
-        self.ui.btn_maximize_restore.clicked.connect(lambda: Functions.maximize_restore(self))
+        self.ui.btn_maximize_restore.clicked.connect(lambda: UIFunctions.maximize_restore(self))
 
         ## SHOW ==> CLOSE APPLICATION
         self.ui.btn_close.clicked.connect(lambda: self.close())
@@ -199,3 +201,9 @@ class Functions(MainWindow):
     ########################################################################
     ## END - GUI DEFINITIONS
     ########################################################################
+
+## => CLASS ALIGN CENTER
+class AlignDelegate(QtWidgets.QStyledItemDelegate):
+    def initStyleOption(self, option, index):
+        super(AlignDelegate, self).initStyleOption(option, index)
+        option.displayAlignment = QtCore.Qt.AlignCenter
