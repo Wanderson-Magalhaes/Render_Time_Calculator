@@ -8,19 +8,19 @@
     <x>0</x>
     <y>0</y>
     <width>500</width>
-    <height>750</height>
+    <height>800</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
     <width>500</width>
-    <height>750</height>
+    <height>800</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
     <width>605</width>
-    <height>750</height>
+    <height>800</height>
    </size>
   </property>
   <property name="palette">
@@ -1583,7 +1583,7 @@ QPushButton:pressed {
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
-                        <height>110</height>
+                        <height>140</height>
                        </size>
                       </property>
                       <property name="maximumSize">
@@ -1898,7 +1898,7 @@ QLineEdit:focus {
                       <property name="minimumSize">
                        <size>
                         <width>0</width>
-                        <height>110</height>
+                        <height>170</height>
                        </size>
                       </property>
                       <property name="maximumSize">
@@ -1987,6 +1987,33 @@ border-radius: 10px;
                          <layout class="QVBoxLayout" name="verticalLayout_17">
                           <item>
                            <layout class="QGridLayout" name="gridLayout_4">
+                            <item row="1" column="1">
+                             <widget class="QLabel" name="label_machines">
+                              <property name="maximumSize">
+                               <size>
+                                <width>16777215</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                              <property name="font">
+                               <font>
+                                <family>Segoe UI</family>
+                               </font>
+                              </property>
+                              <property name="styleSheet">
+                               <string notr="true"/>
+                              </property>
+                              <property name="lineWidth">
+                               <number>1</number>
+                              </property>
+                              <property name="text">
+                               <string>MACHINES</string>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignCenter</set>
+                              </property>
+                             </widget>
+                            </item>
                             <item row="0" column="1">
                              <widget class="QLineEdit" name="lineEdit_machines">
                               <property name="minimumSize">
@@ -2075,33 +2102,6 @@ QLineEdit:focus {
                               </property>
                              </widget>
                             </item>
-                            <item row="1" column="1">
-                             <widget class="QLabel" name="label_machines">
-                              <property name="maximumSize">
-                               <size>
-                                <width>16777215</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                              <property name="font">
-                               <font>
-                                <family>Segoe UI</family>
-                               </font>
-                              </property>
-                              <property name="styleSheet">
-                               <string notr="true"/>
-                              </property>
-                              <property name="lineWidth">
-                               <number>1</number>
-                              </property>
-                              <property name="text">
-                               <string>MACHINES</string>
-                              </property>
-                              <property name="alignment">
-                               <set>Qt::AlignCenter</set>
-                              </property>
-                             </widget>
-                            </item>
                             <item row="1" column="0">
                              <widget class="QLabel" name="label_frames">
                               <property name="maximumSize">
@@ -2123,6 +2123,24 @@ QLineEdit:focus {
                               </property>
                               <property name="text">
                                <string>FRAMES</string>
+                              </property>
+                              <property name="alignment">
+                               <set>Qt::AlignCenter</set>
+                              </property>
+                             </widget>
+                            </item>
+                            <item row="2" column="0" colspan="2">
+                             <widget class="QLabel" name="label_current_render">
+                              <property name="styleSheet">
+                               <string notr="true">background-color: rgb(44, 49, 60);
+border-radius: 10px;
+padding: 5px;
+padding-bottom: 7px;
+margin-top: 2px;
+color: rgb(85, 255, 127);</string>
+                              </property>
+                              <property name="text">
+                               <string>RENDER ATUAL</string>
                               </property>
                               <property name="alignment">
                                <set>Qt::AlignCenter</set>
@@ -2239,7 +2257,7 @@ QLineEdit:focus {
                            <property name="minimumSize">
                             <size>
                              <width>0</width>
-                             <height>100</height>
+                             <height>90</height>
                             </size>
                            </property>
                            <property name="maximumSize">
@@ -2521,8 +2539,14 @@ QHeaderView::section:vertical
                            <property name="editTriggers">
                             <set>QAbstractItemView::NoEditTriggers</set>
                            </property>
+                           <property name="tabKeyNavigation">
+                            <bool>false</bool>
+                           </property>
+                           <property name="showDropIndicator" stdset="0">
+                            <bool>false</bool>
+                           </property>
                            <property name="selectionMode">
-                            <enum>QAbstractItemView::SingleSelection</enum>
+                            <enum>QAbstractItemView::ExtendedSelection</enum>
                            </property>
                            <property name="selectionBehavior">
                             <enum>QAbstractItemView::SelectRows</enum>

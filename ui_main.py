@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Render_Time_CalculatorvhcGOq.ui'
+## Form generated from reading UI file 'Render_Time_CalculatortNwgAK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -21,9 +21,9 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         if MainWindow.objectName():
             MainWindow.setObjectName(u"MainWindow")
-        MainWindow.resize(500, 750)
-        MainWindow.setMinimumSize(QSize(500, 750))
-        MainWindow.setMaximumSize(QSize(605, 750))
+        MainWindow.resize(500, 800)
+        MainWindow.setMinimumSize(QSize(500, 800))
+        MainWindow.setMaximumSize(QSize(605, 800))
         palette = QPalette()
         brush = QBrush(QColor(255, 255, 255, 255))
         brush.setStyle(Qt.SolidPattern)
@@ -700,7 +700,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_18.setObjectName(u"verticalLayout_18")
         self.frame_div_time_per_frame = QFrame(self.page_home)
         self.frame_div_time_per_frame.setObjectName(u"frame_div_time_per_frame")
-        self.frame_div_time_per_frame.setMinimumSize(QSize(0, 110))
+        self.frame_div_time_per_frame.setMinimumSize(QSize(0, 140))
         self.frame_div_time_per_frame.setMaximumSize(QSize(390, 200))
         self.frame_div_time_per_frame.setStyleSheet(u"background-color: rgb(41, 46, 57);\n"
 "border-radius: 10px;\n"
@@ -856,7 +856,7 @@ class Ui_MainWindow(object):
 
         self.frame_div_number_frames = QFrame(self.page_home)
         self.frame_div_number_frames.setObjectName(u"frame_div_number_frames")
-        self.frame_div_number_frames.setMinimumSize(QSize(0, 110))
+        self.frame_div_number_frames.setMinimumSize(QSize(0, 170))
         self.frame_div_number_frames.setMaximumSize(QSize(390, 200))
         self.frame_div_number_frames.setStyleSheet(u"background-color: rgb(41, 46, 57);\n"
 "border-radius: 10px;\n"
@@ -894,6 +894,16 @@ class Ui_MainWindow(object):
         self.verticalLayout_17.setObjectName(u"verticalLayout_17")
         self.gridLayout_4 = QGridLayout()
         self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.label_machines = QLabel(self.frame_content_wid_3)
+        self.label_machines.setObjectName(u"label_machines")
+        self.label_machines.setMaximumSize(QSize(16777215, 20))
+        self.label_machines.setFont(font2)
+        self.label_machines.setStyleSheet(u"")
+        self.label_machines.setLineWidth(1)
+        self.label_machines.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_4.addWidget(self.label_machines, 1, 1, 1, 1)
+
         self.lineEdit_machines = QLineEdit(self.frame_content_wid_3)
         self.lineEdit_machines.setObjectName(u"lineEdit_machines")
         self.lineEdit_machines.setMinimumSize(QSize(100, 60))
@@ -940,16 +950,6 @@ class Ui_MainWindow(object):
 
         self.gridLayout_4.addWidget(self.lineEdit_frames, 0, 0, 1, 1)
 
-        self.label_machines = QLabel(self.frame_content_wid_3)
-        self.label_machines.setObjectName(u"label_machines")
-        self.label_machines.setMaximumSize(QSize(16777215, 20))
-        self.label_machines.setFont(font2)
-        self.label_machines.setStyleSheet(u"")
-        self.label_machines.setLineWidth(1)
-        self.label_machines.setAlignment(Qt.AlignCenter)
-
-        self.gridLayout_4.addWidget(self.label_machines, 1, 1, 1, 1)
-
         self.label_frames = QLabel(self.frame_content_wid_3)
         self.label_frames.setObjectName(u"label_frames")
         self.label_frames.setMaximumSize(QSize(16777215, 20))
@@ -959,6 +959,18 @@ class Ui_MainWindow(object):
         self.label_frames.setAlignment(Qt.AlignCenter)
 
         self.gridLayout_4.addWidget(self.label_frames, 1, 0, 1, 1)
+
+        self.label_current_render = QLabel(self.frame_content_wid_3)
+        self.label_current_render.setObjectName(u"label_current_render")
+        self.label_current_render.setStyleSheet(u"background-color: rgb(44, 49, 60);\n"
+"border-radius: 10px;\n"
+"padding: 5px;\n"
+"padding-bottom: 7px;\n"
+"margin-top: 2px;\n"
+"color: rgb(85, 255, 127);")
+        self.label_current_render.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout_4.addWidget(self.label_current_render, 2, 0, 1, 2)
 
 
         self.verticalLayout_17.addLayout(self.gridLayout_4)
@@ -1042,7 +1054,7 @@ class Ui_MainWindow(object):
         self.tableWidget_renders.setObjectName(u"tableWidget_renders")
         sizePolicy.setHeightForWidth(self.tableWidget_renders.sizePolicy().hasHeightForWidth())
         self.tableWidget_renders.setSizePolicy(sizePolicy)
-        self.tableWidget_renders.setMinimumSize(QSize(0, 100))
+        self.tableWidget_renders.setMinimumSize(QSize(0, 90))
         self.tableWidget_renders.setMaximumSize(QSize(16777215, 100))
         palette1 = QPalette()
         palette1.setBrush(QPalette.Active, QPalette.WindowText, brush6)
@@ -1146,7 +1158,9 @@ class Ui_MainWindow(object):
         self.tableWidget_renders.setSizeAdjustPolicy(QAbstractScrollArea.AdjustToContents)
         self.tableWidget_renders.setAutoScroll(False)
         self.tableWidget_renders.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        self.tableWidget_renders.setSelectionMode(QAbstractItemView.SingleSelection)
+        self.tableWidget_renders.setTabKeyNavigation(False)
+        self.tableWidget_renders.setProperty("showDropIndicator", False)
+        self.tableWidget_renders.setSelectionMode(QAbstractItemView.ExtendedSelection)
         self.tableWidget_renders.setSelectionBehavior(QAbstractItemView.SelectRows)
         self.tableWidget_renders.setShowGrid(True)
         self.tableWidget_renders.setGridStyle(Qt.SolidLine)
@@ -1464,12 +1478,13 @@ class Ui_MainWindow(object):
         self.label_minutes.setText(QCoreApplication.translate("MainWindow", u"MINUTES", None))
         self.label_seconds.setText(QCoreApplication.translate("MainWindow", u"SECONDS", None))
         self.labelBoxBlenderInstalation_3.setText(QCoreApplication.translate("MainWindow", u"NUMBER OF FRAMES AND MACHINES", None))
+        self.label_machines.setText(QCoreApplication.translate("MainWindow", u"MACHINES", None))
         self.lineEdit_machines.setText(QCoreApplication.translate("MainWindow", u"1", None))
         self.lineEdit_machines.setPlaceholderText(QCoreApplication.translate("MainWindow", u"1", None))
         self.lineEdit_frames.setText("")
         self.lineEdit_frames.setPlaceholderText(QCoreApplication.translate("MainWindow", u"00", None))
-        self.label_machines.setText(QCoreApplication.translate("MainWindow", u"MACHINES", None))
         self.label_frames.setText(QCoreApplication.translate("MainWindow", u"FRAMES", None))
+        self.label_current_render.setText(QCoreApplication.translate("MainWindow", u"RENDER ATUAL", None))
         self.pushButton_add_render.setText(QCoreApplication.translate("MainWindow", u"ADD RENDER", None))
         self.lineEdit_description.setPlaceholderText(QCoreApplication.translate("MainWindow", u"Description", None))
         ___qtablewidgetitem = self.tableWidget_renders.horizontalHeaderItem(0)

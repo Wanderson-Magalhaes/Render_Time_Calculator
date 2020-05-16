@@ -13,7 +13,7 @@ from main import *
 class Functions(MainWindow):
 
     ## ==> GLOBALS
-    globals()['atual_render_time'] = ''
+    globals()['atual_render_time'] = timedelta()
     globals()['total_render_time'] = timedelta()
 
     ## ==> ADD RENDER TIME TO TABLE WIDGET
@@ -46,9 +46,16 @@ class Functions(MainWindow):
             self.ui.lineEdit_description.setStyleSheet(Style.style_LineEdit)
             self.ui.lineEdit_description.setPlaceholderText("Description")
 
+            ## ==> CLEAR FIELDS
+            self.ui.lineEdit_hours.setText("")
+            self.ui.lineEdit_minutes.setText("")
+            self.ui.lineEdit_seconds.setText("")
+            self.ui.lineEdit_frames.setText("")
+
             if not rowPosition:
                 Functions.toggleTable(self)
                 QtCore.QTimer.singleShot(350, lambda: self.ui.tableWidget_renders.show())
+                QtCore.QTimer.singleShot(350, lambda: self.ui.label_current_render.show())
 
         else:
             self.ui.lineEdit_description.setStyleSheet(Style.style_LineEdit_empyt)
@@ -58,7 +65,7 @@ class Functions(MainWindow):
     ########################################################################
     def toggleTable(self):
         height = self.ui.frame_div_table_widget.height()
-        maxExtend = 150
+        maxExtend = 170
         standard = 50
 
         # SET MAX WIDTH
@@ -78,6 +85,8 @@ class Functions(MainWindow):
     ## ==> CALCULATE TIME
     ########################################################################
     def calculateTime(self):
+        tableTrue = self.ui.tableWidget_renders.rowCount()
+
         # GET HOURS
         getHours = self.ui.lineEdit_hours.text()
         if not getHours:
@@ -108,20 +117,37 @@ class Functions(MainWindow):
             self.ui.lineEdit_machines.setText('1')
             getNumMachines = '1'
 
+        ## ==> STANDARD TIME
         timeNow = datetime.today()
-
         frameTime = timedelta(hours=int(getHours), minutes=int(getMinutes), seconds=int(getSeconds))
         mathDateEnd = timeNow + (frameTime * int(getNumFrame) / int(getNumMachines))
         totalTime = mathDateEnd - timeNow
-        splitTime = str(totalTime).split(':')
+
+        ## ==> IF TABLE EXIST SET TOTAL RENDER TIME
+        if tableTrue != 0:
+            splitTime = str(totalTime).split(':')
+            days = splitTime[0].replace(' days,', 'd').replace(' day,', 'd')
+            strRenderRime =  days + 'h ' + splitTime[1] + 'm ' + splitTime[2] + 's'
+            self.ui.label_current_render.setText(strRenderRime)
+
+            totalTimeGlobal = globals()['total_render_time']
+        else:
+            totalTimeGlobal = totalTime
+
+        ## ==> SPLIT TIMES
+        splitTime = str(totalTimeGlobal).split(':')
         days = splitTime[0].replace(' days,', 'd').replace(' day,', 'd')
         strRenderRime =  days + 'h ' + splitTime[1] + 'm ' + splitTime[2] + 's'
+
+        ## ==> IF TABLE EXIST SOME TIME NOW WITH TABLE
+        if tableTrue != 0:
+            mathDateEnd = timeNow + globals()['total_render_time']
+
         strDayEnd = 'Ends <b>day ' + str(mathDateEnd.day) + '</b> at <b>' + str(mathDateEnd.hour) + 'h</b>, <b>' + str(mathDateEnd.minute) + 'm</b> and <b>' + str(mathDateEnd.second) + 's</b>'
 
+        ## ==> SET TIME ATUAL AND SUM TABLE
         globals()['atual_render_time'] = totalTime
-        # print(Functions.appendTime(self))
-        print('Calculate: ', Functions.calculateTable(self))
-
+        Functions.calculateTable(self)
 
         ## ==> SET RESULT
         self.ui.label_render_time.setText(strRenderRime)
@@ -156,6 +182,3 @@ class Functions(MainWindow):
             td_reconstructed = Functions.reconstruct_timedelta(t)
             sumTime = td_reconstructed + globals()['total_render_time']
             globals()['total_render_time'] = sumTime
-
-        print('soma teste: ', globals()['total_render_time'])
-        globals()['total_render_time'] = timedelta()

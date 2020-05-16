@@ -46,9 +46,9 @@ class MainWindow(QMainWindow):
         ## ==> END ##
 
         ## REMOVE ==> STANDARD TITLE BAR
-        self.resize(500, 750)
-        self.setMinimumSize(QSize(500, 750))
-        UIFunctions.enableMaximumSize(self, 500, 750)
+        self.resize(500, 800)
+        self.setMinimumSize(QSize(500, 800))
+        UIFunctions.enableMaximumSize(self, 500, 800)
         ## ==> END ##
 
         ## ==> MOVE WINDOW / MAXIMIZE / RESTORE
@@ -118,6 +118,7 @@ class MainWindow(QMainWindow):
         ## ==> QTableWidget RARAMETERS
         ########################################################################
         self.ui.tableWidget_renders.hide()
+        self.ui.label_current_render.hide()
         self.ui.frame_div_table_widget.setMaximumSize(400, 50)
         self.ui.tableWidget_renders.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.Stretch)
         self.ui.tableWidget_renders.horizontalHeader().setSectionResizeMode(1, QtWidgets.QHeaderView.Fixed)
@@ -132,7 +133,6 @@ class MainWindow(QMainWindow):
 
         ## ==> ADD NEW ROW
         self.ui.pushButton_add_render.clicked.connect(lambda: Functions.addTableRow(self))
-
 
         ## ==> JUST NUMBERS
         self.onlyInt = QIntValidator()
@@ -177,6 +177,7 @@ class MainWindow(QMainWindow):
         if count == 1:
             Functions.toggleTable(self)
             QtCore.QTimer.singleShot(600, lambda: self.ui.tableWidget_renders.hide())
+            QtCore.QTimer.singleShot(600, lambda: self.ui.label_current_render.hide())
 
     ########################################################################
     ## MENUS ==> DYNAMIC MENUS FUNCTIONS
