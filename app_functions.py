@@ -127,7 +127,7 @@ class Functions(MainWindow):
         if tableTrue != 0:
             splitTime = str(totalTime).split(':')
             days = splitTime[0].replace(' days,', 'd').replace(' day,', 'd')
-            strRenderRime =  days + 'h ' + splitTime[1] + 'm ' + splitTime[2] + 's'
+            strRenderRime =  days + 'h ' + splitTime[1] + 'm ' + splitTime[2][:2] + 's'
             self.ui.label_current_render.setText(strRenderRime)
 
             totalTimeGlobal = globals()['total_render_time']
@@ -137,13 +137,13 @@ class Functions(MainWindow):
         ## ==> SPLIT TIMES
         splitTime = str(totalTimeGlobal).split(':')
         days = splitTime[0].replace(' days,', 'd').replace(' day,', 'd')
-        strRenderRime =  days + 'h ' + splitTime[1] + 'm ' + splitTime[2] + 's'
+        strRenderRime =  days + 'h ' + splitTime[1] + 'm ' + splitTime[2][:2] + 's'
 
         ## ==> IF TABLE EXIST SOME TIME NOW WITH TABLE
         if tableTrue != 0:
             mathDateEnd = timeNow + globals()['total_render_time']
 
-        strDayEnd = 'Ends <b>day ' + str(mathDateEnd.day) + '</b> at <b>' + str(mathDateEnd.hour) + 'h</b>, <b>' + str(mathDateEnd.minute) + 'm</b> and <b>' + str(mathDateEnd.second) + 's</b>'
+        strDayEnd = 'Ends <b>day ' + str(mathDateEnd.day) + '</b> at <b>' + str(mathDateEnd.hour) + 'h</b>, <b>' + str(mathDateEnd.minute) + 'm</b> and <b>' + str(mathDateEnd.second)[:2] + 's</b>'
 
         ## ==> SET TIME ATUAL AND SUM TABLE
         globals()['atual_render_time'] = totalTime

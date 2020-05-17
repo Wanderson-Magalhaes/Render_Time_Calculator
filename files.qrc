@@ -250,6 +250,9 @@
     <file>icons/16x16/cil-zoom-in.png</file>
     <file>icons/16x16/cil-zoom-out.png</file>
   </qresource>
+  <qresource prefix="Images">
+    <file>images/image_about.jpg</file>
+  </qresource>
   <qresource prefix="32x32">
     <file>icons/32x32/timer-icon.png</file>
   </qresource>

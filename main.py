@@ -14,6 +14,7 @@ from PySide2.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFo
 from PySide2.QtWidgets import *
 from datetime import datetime, timedelta
 import pytimeparse
+import webbrowser
 
 # GUI FILE
 from ui_main import Ui_MainWindow
@@ -22,8 +23,8 @@ from ui_styles import Style
 # IMPORT FUNCTIONS
 from ui_functions import *
 
-print(platform.system())
-print(platform.release())
+# print(platform.system())
+# print(platform.release())
 
 class MainWindow(QMainWindow):
     def __init__(self):
@@ -95,7 +96,7 @@ class MainWindow(QMainWindow):
         ########################################################################
 
         ## ==> TOGGLE MENU SIZE
-        self.ui.btn_toggle_menu.clicked.connect(lambda: UIFunctions.toggleMenu(self, 250, True))
+        self.ui.btn_toggle_menu.clicked.connect(lambda: UIFunctions.toggleMenu(self, 240, True))
         ## ==> END ##
 
         ## ==> ADD CUSTOM MENUS
@@ -146,8 +147,12 @@ class MainWindow(QMainWindow):
         ## ==> AUTO UPDATE
         Functions.calculateTime(self)
         self.timer = QtCore.QTimer(self)
-        self.timer.start(1000)
+        self.timer.start(500)
         self.timer.timeout.connect(lambda: Functions.calculateTime(self))
+
+        ## ==> OPEN LINKS
+        self.ui.btn_artstation.clicked.connect(lambda: webbrowser.open('https://www.artstation.com/vfxonfire'))
+        self.ui.btn_gumroad.clicked.connect(lambda: webbrowser.open('https://gumroad.com/blender_addons'))
 
 
         ########################################################################
@@ -208,10 +213,11 @@ class MainWindow(QMainWindow):
     ## EVENT ==> MOUSE DOUBLE CLICK
     ########################################################################
     def eventFilter(self, obj, event):
-        if isinstance(obj, QLineEdit) and event.type() == QEvent.keyPressEvent:
-            i = obj.property("index")
-            self.keyPressEvent.emit(i)
-        return QWidget.eventFilter(self, obj, event)
+        pass
+        # if isinstance(obj, QLineEdit) and event.type() == QEvent.keyPressEvent:
+        #     i = obj.property("index")
+        #     self.keyPressEvent.emit(i)
+        # return QWidget.eventFilter(self, obj, event)
     ## ==> END ##
 
     ## ==> keyReleaseEvent
@@ -224,18 +230,19 @@ class MainWindow(QMainWindow):
     ########################################################################
     def mousePressEvent(self, event):
         self.dragPos = event.globalPos()
-        if event.buttons() == Qt.LeftButton:
-            print('Mouse click: LEFT CLICK')
-        if event.buttons() == Qt.RightButton:
-            print('Mouse click: RIGHT CLICK')
-        if event.buttons() == Qt.MidButton:
-            print('Mouse click: MIDDLE BUTTON')
+        # if event.buttons() == Qt.LeftButton:
+        #     print('Mouse click: LEFT CLICK')
+        # if event.buttons() == Qt.RightButton:
+        #     print('Mouse click: RIGHT CLICK')
+        # if event.buttons() == Qt.MidButton:
+        #     print('Mouse click: MIDDLE BUTTON')
     ## ==> END ##
 
     ## EVENT ==> KEY PRESSED
     ########################################################################
     def keyPressEvent(self, event):
-        print('Text Key: ' + str(event.key()) + ' | Text Press: ' + str(event.text()))
+        pass
+        # print('Text Key: ' + str(event.key()) + ' | Text Press: ' + str(event.text()))
     ## ==> END ##
 
     ## EVENT ==> RESIZE EVENT
@@ -245,7 +252,8 @@ class MainWindow(QMainWindow):
         return super(MainWindow, self).resizeEvent(event)
 
     def resizeFunction(self):
-        print('Height: ' + str(self.height()) + ' | Width: ' + str(self.width()))
+        pass
+        # print('Height: ' + str(self.height()) + ' | Width: ' + str(self.width()))
     ## ==> END ##
 
     ########################################################################
@@ -256,5 +264,7 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     QtGui.QFontDatabase.addApplicationFont('fonts/segoeui.ttf')
     QtGui.QFontDatabase.addApplicationFont('fonts/segoeuib.ttf')
+    QtGui.QFontDatabase.addApplicationFont('fonts/Roboto-Regular.ttf')
+    QtGui.QFontDatabase.addApplicationFont('fonts/Roboto-Thin.ttf')
     window = MainWindow()
     sys.exit(app.exec_())

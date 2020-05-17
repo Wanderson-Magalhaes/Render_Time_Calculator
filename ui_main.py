@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'Render_Time_CalculatortNwgAK.ui'
+## Form generated from reading UI file 'Render_Time_Calculatoricgnoh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.14.1
 ##
@@ -123,6 +123,9 @@ class Ui_MainWindow(object):
         font.setFamily(u"Segoe UI")
         font.setPointSize(10)
         MainWindow.setFont(font)
+        icon = QIcon()
+        icon.addFile(u"icon.ico", QSize(), QIcon.Normal, QIcon.Off)
+        MainWindow.setWindowIcon(icon)
         MainWindow.setStyleSheet(u"QMainWindow {background: transparent; }\n"
 "QToolTip {\n"
 "	color: #ffffff;\n"
@@ -494,9 +497,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgb(85, 170, 255);\n"
 "}")
-        icon = QIcon()
-        icon.addFile(u":/16x16/icons/16x16/cil-window-minimize.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_minimize.setIcon(icon)
+        icon1 = QIcon()
+        icon1.addFile(u":/16x16/icons/16x16/cil-window-minimize.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_minimize.setIcon(icon1)
 
         self.horizontalLayout_5.addWidget(self.btn_minimize)
 
@@ -516,9 +519,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgb(85, 170, 255);\n"
 "}")
-        icon1 = QIcon()
-        icon1.addFile(u":/16x16/icons/16x16/cil-window-maximize.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_maximize_restore.setIcon(icon1)
+        icon2 = QIcon()
+        icon2.addFile(u":/16x16/icons/16x16/cil-window-maximize.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_maximize_restore.setIcon(icon2)
 
         self.horizontalLayout_5.addWidget(self.btn_maximize_restore)
 
@@ -538,9 +541,9 @@ class Ui_MainWindow(object):
 "QPushButton:pressed {	\n"
 "	background-color: rgb(85, 170, 255);\n"
 "}")
-        icon2 = QIcon()
-        icon2.addFile(u":/16x16/icons/16x16/cil-x.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.btn_close.setIcon(icon2)
+        icon3 = QIcon()
+        icon3.addFile(u":/16x16/icons/16x16/cil-x.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_close.setIcon(icon3)
 
         self.horizontalLayout_5.addWidget(self.btn_close)
 
@@ -758,11 +761,11 @@ class Ui_MainWindow(object):
 "	selection-background-color: rgb(85, 170, 255);\n"
 "}\n"
 "QLineEdit:hover {\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
+"	border: 2px solid rgb(44, 49, 60);\n"
 "}\n"
 "QLineEdit:focus {\n"
 "	border: 2px solid rgb(85, 170, 255);\n"
-"	background-color: rgb(43, 49, 57);\n"
+"	background-color: rgb(27, 29, 35);\n"
 "}")
         self.lineEdit_hours.setMaxLength(2)
         self.lineEdit_hours.setAlignment(Qt.AlignCenter)
@@ -781,11 +784,11 @@ class Ui_MainWindow(object):
 "	selection-background-color: rgb(85, 170, 255);\n"
 "}\n"
 "QLineEdit:hover {\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
+"	border: 2px solid rgb(44, 49, 60);\n"
 "}\n"
 "QLineEdit:focus {\n"
 "	border: 2px solid rgb(85, 170, 255);\n"
-"	background-color: rgb(43, 49, 57);\n"
+"	background-color: rgb(27, 29, 35);\n"
 "}")
         self.lineEdit_minutes.setMaxLength(2)
         self.lineEdit_minutes.setAlignment(Qt.AlignCenter)
@@ -804,11 +807,11 @@ class Ui_MainWindow(object):
 "	selection-background-color: rgb(85, 170, 255);\n"
 "}\n"
 "QLineEdit:hover {\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
+"	border: 2px solid rgb(44, 49, 60);\n"
 "}\n"
 "QLineEdit:focus {\n"
 "	border: 2px solid rgb(85, 170, 255);\n"
-"	background-color: rgb(43, 49, 57);\n"
+"	background-color: rgb(27, 29, 35);\n"
 "}")
         self.lineEdit_seconds.setMaxLength(2)
         self.lineEdit_seconds.setAlignment(Qt.AlignCenter)
@@ -916,11 +919,11 @@ class Ui_MainWindow(object):
 "	selection-background-color: rgb(85, 170, 255);\n"
 "}\n"
 "QLineEdit:hover {\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
+"	border: 2px solid rgb(44, 49, 60);\n"
 "}\n"
 "QLineEdit:focus {\n"
 "	border: 2px solid rgb(85, 170, 255);\n"
-"	background-color: rgb(43, 49, 57);\n"
+"	background-color: rgb(27, 29, 35);\n"
 "}")
         self.lineEdit_machines.setMaxLength(4)
         self.lineEdit_machines.setAlignment(Qt.AlignCenter)
@@ -939,11 +942,11 @@ class Ui_MainWindow(object):
 "	selection-background-color: rgb(85, 170, 255);\n"
 "}\n"
 "QLineEdit:hover {\n"
-"	border: 2px solid rgb(64, 71, 88);\n"
+"	border: 2px solid rgb(44, 49, 60);\n"
 "}\n"
 "QLineEdit:focus {\n"
 "	border: 2px solid rgb(85, 170, 255);\n"
-"	background-color: rgb(43, 49, 57);\n"
+"	background-color: rgb(27, 29, 35);\n"
 "}")
         self.lineEdit_frames.setMaxLength(8)
         self.lineEdit_frames.setAlignment(Qt.AlignCenter)
@@ -1014,15 +1017,16 @@ class Ui_MainWindow(object):
 "	background-color: rgb(35, 40, 49);\n"
 "	border: 2px solid rgb(43, 50, 61);\n"
 "}")
-        icon3 = QIcon()
-        icon3.addFile(u":/16x16/icons/16x16/cil-plus.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.pushButton_add_render.setIcon(icon3)
+        icon4 = QIcon()
+        icon4.addFile(u":/16x16/icons/16x16/cil-plus.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.pushButton_add_render.setIcon(icon4)
 
         self.gridLayout_6.addWidget(self.pushButton_add_render, 0, 1, 1, 1)
 
         self.lineEdit_description = QLineEdit(self.frame_div_table_widget)
         self.lineEdit_description.setObjectName(u"lineEdit_description")
         self.lineEdit_description.setMinimumSize(QSize(0, 30))
+        self.lineEdit_description.setFont(font2)
         self.lineEdit_description.setStyleSheet(u"QLineEdit {\n"
 "	background-color: rgb(27, 29, 35);\n"
 "	border-radius: 10px;\n"
@@ -1165,7 +1169,7 @@ class Ui_MainWindow(object):
         self.tableWidget_renders.setShowGrid(True)
         self.tableWidget_renders.setGridStyle(Qt.SolidLine)
         self.tableWidget_renders.setSortingEnabled(False)
-        self.tableWidget_renders.horizontalHeader().setVisible(True)
+        self.tableWidget_renders.horizontalHeader().setVisible(False)
         self.tableWidget_renders.verticalHeader().setVisible(False)
 
         self.gridLayout_6.addWidget(self.tableWidget_renders, 1, 0, 1, 2)
@@ -1272,72 +1276,80 @@ class Ui_MainWindow(object):
         self.page_info.setObjectName(u"page_info")
         self.verticalLayout_6 = QVBoxLayout(self.page_info)
         self.verticalLayout_6.setObjectName(u"verticalLayout_6")
-        self.frame = QFrame(self.page_info)
-        self.frame.setObjectName(u"frame")
-        self.frame.setStyleSheet(u"border-radius: 5px;")
-        self.frame.setFrameShape(QFrame.StyledPanel)
-        self.frame.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_15 = QVBoxLayout(self.frame)
-        self.verticalLayout_15.setSpacing(0)
-        self.verticalLayout_15.setObjectName(u"verticalLayout_15")
-        self.verticalLayout_15.setContentsMargins(0, 0, 0, 0)
-        self.frame_div_content_1 = QFrame(self.frame)
-        self.frame_div_content_1.setObjectName(u"frame_div_content_1")
-        self.frame_div_content_1.setMinimumSize(QSize(0, 110))
-        self.frame_div_content_1.setMaximumSize(QSize(16777215, 110))
-        self.frame_div_content_1.setStyleSheet(u"background-color: rgb(41, 45, 56);\n"
-"border-radius: 5px;\n"
-"")
-        self.frame_div_content_1.setFrameShape(QFrame.NoFrame)
-        self.frame_div_content_1.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_7 = QVBoxLayout(self.frame_div_content_1)
-        self.verticalLayout_7.setSpacing(0)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.verticalLayout_7.setContentsMargins(0, 0, 0, 0)
-        self.frame_title_wid_1 = QFrame(self.frame_div_content_1)
-        self.frame_title_wid_1.setObjectName(u"frame_title_wid_1")
-        self.frame_title_wid_1.setMaximumSize(QSize(16777215, 35))
-        self.frame_title_wid_1.setStyleSheet(u"background-color: rgb(39, 44, 54);")
-        self.frame_title_wid_1.setFrameShape(QFrame.StyledPanel)
-        self.frame_title_wid_1.setFrameShadow(QFrame.Raised)
-        self.verticalLayout_8 = QVBoxLayout(self.frame_title_wid_1)
-        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
-        self.labelBoxBlenderInstalation = QLabel(self.frame_title_wid_1)
-        self.labelBoxBlenderInstalation.setObjectName(u"labelBoxBlenderInstalation")
-        self.labelBoxBlenderInstalation.setFont(font1)
-        self.labelBoxBlenderInstalation.setStyleSheet(u"")
-
-        self.verticalLayout_8.addWidget(self.labelBoxBlenderInstalation)
-
-
-        self.verticalLayout_7.addWidget(self.frame_title_wid_1)
-
-        self.frame_content_wid_1 = QFrame(self.frame_div_content_1)
-        self.frame_content_wid_1.setObjectName(u"frame_content_wid_1")
-        self.frame_content_wid_1.setFrameShape(QFrame.NoFrame)
-        self.frame_content_wid_1.setFrameShadow(QFrame.Raised)
-        self.horizontalLayout_9 = QHBoxLayout(self.frame_content_wid_1)
-        self.horizontalLayout_9.setObjectName(u"horizontalLayout_9")
-
-        self.verticalLayout_7.addWidget(self.frame_content_wid_1)
-
-
-        self.verticalLayout_15.addWidget(self.frame_div_content_1)
-
-
-        self.verticalLayout_6.addWidget(self.frame)
-
         self.frame_2 = QFrame(self.page_info)
         self.frame_2.setObjectName(u"frame_2")
-        self.frame_2.setMinimumSize(QSize(0, 150))
+        self.frame_2.setMinimumSize(QSize(0, 500))
         self.frame_2.setStyleSheet(u"background-color: rgb(39, 44, 54);\n"
-"border-radius: 5px;")
-        self.frame_2.setFrameShape(QFrame.StyledPanel)
+"border-radius: 10px;")
+        self.frame_2.setFrameShape(QFrame.NoFrame)
         self.frame_2.setFrameShadow(QFrame.Raised)
-        self.commandLinkButton = QCommandLinkButton(self.frame_2)
-        self.commandLinkButton.setObjectName(u"commandLinkButton")
-        self.commandLinkButton.setGeometry(QRect(40, 80, 271, 51))
-        self.commandLinkButton.setStyleSheet(u"QCommandLinkButton {	\n"
+        self.verticalLayout_7 = QVBoxLayout(self.frame_2)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.frame = QFrame(self.frame_2)
+        self.frame.setObjectName(u"frame")
+        self.frame.setMaximumSize(QSize(16777215, 450))
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.verticalLayout_8 = QVBoxLayout(self.frame)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.gridLayout = QGridLayout()
+        self.gridLayout.setObjectName(u"gridLayout")
+        self.frame_3 = QFrame(self.frame)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setMinimumSize(QSize(0, 200))
+        self.frame_3.setStyleSheet(u"background-image: url(:/Images/images/image_about.jpg);\n"
+"background-position: center;\n"
+"background-repeat: no-repeat;\n"
+"border-radius: 10px;")
+        self.frame_3.setFrameShape(QFrame.NoFrame)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.label_version_2 = QLabel(self.frame_3)
+        self.label_version_2.setObjectName(u"label_version_2")
+        self.label_version_2.setGeometry(QRect(290, 170, 61, 25))
+        self.label_version_2.setFont(font1)
+        self.label_version_2.setStyleSheet(u"background: none;\n"
+"background-color: rgba(44, 49, 60, 150);\n"
+"border-radius: 5px;\n"
+"")
+        self.label_version_2.setAlignment(Qt.AlignCenter)
+
+        self.gridLayout.addWidget(self.frame_3, 0, 0, 1, 1)
+
+        self.label_title_bar_top_2 = QLabel(self.frame)
+        self.label_title_bar_top_2.setObjectName(u"label_title_bar_top_2")
+        self.label_title_bar_top_2.setFont(font1)
+        self.label_title_bar_top_2.setStyleSheet(u"background: transparent;\n"
+"")
+
+        self.gridLayout.addWidget(self.label_title_bar_top_2, 1, 0, 1, 1)
+
+        self.label_credits_2 = QLabel(self.frame)
+        self.label_credits_2.setObjectName(u"label_credits_2")
+        self.label_credits_2.setFont(font2)
+        self.label_credits_2.setStyleSheet(u"color: rgb(98, 103, 111);")
+
+        self.gridLayout.addWidget(self.label_credits_2, 2, 0, 1, 1)
+
+        self.label_credits_3 = QLabel(self.frame)
+        self.label_credits_3.setObjectName(u"label_credits_3")
+        self.label_credits_3.setFont(font2)
+        self.label_credits_3.setStyleSheet(u"color: rgb(98, 103, 111);")
+
+        self.gridLayout.addWidget(self.label_credits_3, 3, 0, 1, 1)
+
+        self.label_title_bar_top_4 = QLabel(self.frame)
+        self.label_title_bar_top_4.setObjectName(u"label_title_bar_top_4")
+        self.label_title_bar_top_4.setFont(font1)
+        self.label_title_bar_top_4.setStyleSheet(u"background: transparent;\n"
+"")
+
+        self.gridLayout.addWidget(self.label_title_bar_top_4, 4, 0, 1, 1)
+
+        self.btn_artstation = QCommandLinkButton(self.frame)
+        self.btn_artstation.setObjectName(u"btn_artstation")
+        self.btn_artstation.setStyleSheet(u"QCommandLinkButton {	\n"
 "	color: rgb(85, 170, 255);\n"
 "	border-radius: 5px;\n"
 "	padding: 5px;\n"
@@ -1350,11 +1362,47 @@ class Ui_MainWindow(object):
 "	color: rgb(210, 210, 210);\n"
 "	background-color: rgb(52, 58, 71);\n"
 "}")
-        icon4 = QIcon()
-        icon4.addFile(u":/16x16/icons/16x16/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
-        self.commandLinkButton.setIcon(icon4)
+        icon5 = QIcon()
+        icon5.addFile(u":/16x16/icons/16x16/cil-link.png", QSize(), QIcon.Normal, QIcon.Off)
+        self.btn_artstation.setIcon(icon5)
 
-        self.verticalLayout_6.addWidget(self.frame_2)
+        self.gridLayout.addWidget(self.btn_artstation, 5, 0, 1, 1)
+
+        self.label_title_bar_top_5 = QLabel(self.frame)
+        self.label_title_bar_top_5.setObjectName(u"label_title_bar_top_5")
+        self.label_title_bar_top_5.setFont(font1)
+        self.label_title_bar_top_5.setStyleSheet(u"background: transparent;\n"
+"")
+
+        self.gridLayout.addWidget(self.label_title_bar_top_5, 6, 0, 1, 1)
+
+        self.btn_gumroad = QCommandLinkButton(self.frame)
+        self.btn_gumroad.setObjectName(u"btn_gumroad")
+        self.btn_gumroad.setStyleSheet(u"QCommandLinkButton {	\n"
+"	color: rgb(85, 170, 255);\n"
+"	border-radius: 5px;\n"
+"	padding: 5px;\n"
+"}\n"
+"QCommandLinkButton:hover {	\n"
+"	color: rgb(210, 210, 210);\n"
+"	background-color: rgb(44, 49, 60);\n"
+"}\n"
+"QCommandLinkButton:pressed {	\n"
+"	color: rgb(210, 210, 210);\n"
+"	background-color: rgb(52, 58, 71);\n"
+"}")
+        self.btn_gumroad.setIcon(icon5)
+
+        self.gridLayout.addWidget(self.btn_gumroad, 7, 0, 1, 1)
+
+
+        self.verticalLayout_8.addLayout(self.gridLayout)
+
+
+        self.verticalLayout_7.addWidget(self.frame)
+
+
+        self.verticalLayout_6.addWidget(self.frame_2, 0, Qt.AlignTop)
 
         self.stackedWidget.addWidget(self.page_info)
 
@@ -1438,7 +1486,6 @@ class Ui_MainWindow(object):
         QWidget.setTabOrder(self.lineEdit_machines, self.lineEdit_description)
         QWidget.setTabOrder(self.lineEdit_description, self.pushButton_add_render)
         QWidget.setTabOrder(self.pushButton_add_render, self.tableWidget_renders)
-        QWidget.setTabOrder(self.tableWidget_renders, self.commandLinkButton)
 
         self.retranslateUi(MainWindow)
 
@@ -1498,10 +1545,16 @@ class Ui_MainWindow(object):
         self.label_machines_3.setText(QCoreApplication.translate("MainWindow", u"CURRENT TIME", None))
         self.label_machines_5.setText(QCoreApplication.translate("MainWindow", u"FINISH TIME", None))
         self.label_day_end.setText(QCoreApplication.translate("MainWindow", u"Ends day 05 at 12h, 49 minutes and 6 seconds", None))
-        self.labelBoxBlenderInstalation.setText(QCoreApplication.translate("MainWindow", u"BLENDER INSTALLATION", None))
-        self.commandLinkButton.setText(QCoreApplication.translate("MainWindow", u"CommandLinkButton", None))
-        self.commandLinkButton.setDescription(QCoreApplication.translate("MainWindow", u"Open External Link", None))
+        self.label_version_2.setText(QCoreApplication.translate("MainWindow", u"v2.0.0", None))
+        self.label_title_bar_top_2.setText(QCoreApplication.translate("MainWindow", u"RENDER TIME CALCULATOR", None))
+        self.label_credits_2.setText(QCoreApplication.translate("MainWindow", u"by: Wanderson M. Pimenta", None))
+        self.label_credits_3.setText(QCoreApplication.translate("MainWindow", u"A simple application to calculate rendering time estimates.\n"
+"Now in version 2.0.0 it is supported on Mac, Windows and Linux.", None))
+        self.label_title_bar_top_4.setText(QCoreApplication.translate("MainWindow", u"ArtStation:", None))
+        self.btn_artstation.setText(QCoreApplication.translate("MainWindow", u"artstation.com/vfxonfire", None))
+        self.label_title_bar_top_5.setText(QCoreApplication.translate("MainWindow", u"Gumroad:", None))
+        self.btn_gumroad.setText(QCoreApplication.translate("MainWindow", u"gumroad.com/blender_addons", None))
         self.label_credits.setText(QCoreApplication.translate("MainWindow", u"by: Wanderson M. Pimenta", None))
-        self.label_version.setText(QCoreApplication.translate("MainWindow", u"v1.0.0", None))
+        self.label_version.setText(QCoreApplication.translate("MainWindow", u"v2.0.0", None))
     # retranslateUi
 

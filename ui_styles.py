@@ -15,18 +15,18 @@ class Style():
         background-position: left center;
         background-repeat: no-repeat;
         border: none;
-        border-left: 28px solid rgb(27, 29, 35);
+        border-left: 26px solid rgb(27, 29, 35);
         background-color: rgb(27, 29, 35);
         text-align: left;
         padding-left: 45px;
     }
     QPushButton:hover {
         background-color: rgb(33, 37, 43);
-        border-left: 28px solid rgb(33, 37, 43);
+        border-left: 26px solid rgb(33, 37, 43);
     }
     QPushButton:pressed {
         background-color: rgb(85, 170, 255);
-        border-left: 28px solid rgb(85, 170, 255);
+        border-left: 26px solid rgb(85, 170, 255);
     }
     """
     )
