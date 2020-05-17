@@ -262,9 +262,9 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
-    QtGui.QFontDatabase.addApplicationFont('fonts/segoeui.ttf')
-    QtGui.QFontDatabase.addApplicationFont('fonts/segoeuib.ttf')
-    QtGui.QFontDatabase.addApplicationFont('fonts/Roboto-Regular.ttf')
-    QtGui.QFontDatabase.addApplicationFont('fonts/Roboto-Thin.ttf')
+    QtGui.QFontDatabase.addApplicationFont(':/Fonts/fonts/segoeui.ttf')
+    QtGui.QFontDatabase.addApplicationFont(':/Fonts/fonts/segoeuib.ttf')
+    QtGui.QFontDatabase.addApplicationFont(':/Fonts/fonts/Roboto-Regular.ttf')
+    QtGui.QFontDatabase.addApplicationFont(':/Fonts/fonts/Roboto-Thin.ttf')
     window = MainWindow()
     sys.exit(app.exec_())
