@@ -250,12 +250,6 @@
     <file>icons/16x16/cil-zoom-in.png</file>
     <file>icons/16x16/cil-zoom-out.png</file>
   </qresource>
-  <qresource prefix="Fonts">
-    <file>fonts/Roboto-Regular.ttf</file>
-    <file>fonts/Roboto-Thin.ttf</file>
-    <file>fonts/segoeui.ttf</file>
-    <file>fonts/segoeuib.ttf</file>
-  </qresource>
   <qresource prefix="Images">
     <file>images/image_about.jpg</file>
   </qresource>
