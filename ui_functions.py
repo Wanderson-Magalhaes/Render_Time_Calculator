@@ -10,13 +10,12 @@
 from main import *
 from app_functions import *
 count = 1
+
+## ==> GLOBALS
+GLOBAL_STATE = 0
+GLOBAL_TITLE_BAR = True
+
 class UIFunctions(MainWindow):
-
-    ## ==> GLOBALS
-    globals()['state'] = 0
-    globals()['titleBar'] = True
-
-
     ########################################################################
     ## START - GUI FUNCTIONS
     ########################################################################
@@ -24,17 +23,18 @@ class UIFunctions(MainWindow):
     ## ==> MAXIMIZE/RESTORE
     ########################################################################
     def maximize_restore(self):
-        status = globals()['state']
+        global GLOBAL_STATE
+        status = GLOBAL_STATE
         if status == 0:
             self.showMaximized()
-            globals()['state'] = 1
+            GLOBAL_STATE = 1
             self.ui.horizontalLayout.setContentsMargins(0, 0, 0, 0)
             self.ui.btn_maximize_restore.setToolTip("Restore")
             self.ui.btn_maximize_restore.setIcon(QtGui.QIcon(u":/16x16/icons/16x16/cil-window-restore.png"))
             self.ui.frame_top_btns.setStyleSheet("background-color: rgb(27, 29, 35)")
             self.ui.frame_size_grip.hide()
         else:
-            globals()['state'] = 0
+            GLOBAL_STATE = 0
             self.showNormal()
             self.resize(self.width()+1, self.height()+1)
             self.ui.horizontalLayout.setContentsMargins(10, 10, 10, 10)
@@ -45,11 +45,12 @@ class UIFunctions(MainWindow):
 
     ## ==> RETURN STATUS
     def returStatus():
-        return globals()['state']
+        return GLOBAL_STATE
 
     ## ==> SET STATUS
     def setStatus(status):
-        globals()['state'] = status
+        global GLOBAL_STATE
+        GLOBAL_STATE = status
 
     ## ==> ENABLE MAXIMUM SIZE
     ########################################################################
@@ -84,7 +85,8 @@ class UIFunctions(MainWindow):
     ## ==> SET TITLE BAR
     ########################################################################
     def removeTitleBar(status):
-        globals()['titleBar'] = status
+        global GLOBAL_TITLE_BAR
+        GLOBAL_TITLE_BAR = status
 
     ## ==> HEADER TEXTS
     ########################################################################
@@ -165,7 +167,7 @@ class UIFunctions(MainWindow):
     ########################################################################
     def uiDefinitions(self):
         ## REMOVE ==> STANDARD TITLE BAR
-        if globals()['titleBar']:
+        if GLOBAL_TITLE_BAR:
             self.setWindowFlags(QtCore.Qt.FramelessWindowHint)
             self.setAttribute(QtCore.Qt.WA_TranslucentBackground)
         else:
